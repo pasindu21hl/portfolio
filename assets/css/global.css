@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom keyframes for animations */
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-3px, 3px);
+    }
+    40% {
+        transform: translate(-3px, -3px);
+    }
+    60% {
+        transform: translate(3px, 3px);
+    }
+    80% {
+        transform: translate(3px, -3px);
+    }
+    to {
+        transform: translate(0);
+    }
+}
+
+/* Custom utility classes */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.5); /* neon-green with opacity */
+    transform: scale(0);
+    animation: ripple 600ms linear;
+}
+
+.glitch {
+    animation: glitch 1s linear infinite;
+}
+
+/* Define custom font families */
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-jetbrains-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Style the typewriter cursor */
+.Typewriter__cursor {
+    color: #22C55E; /* neon-green */
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #22C55E; /* neon-green */
+    }
+}
+
+/* --- Custom Cursor --- */
+body {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #22C55E;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    box-shadow: 0 0 15px #22C55E, 0 0 25px #22C55E;
+}
+
+.custom-cursor.pointer {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(34, 197, 94, 0.2);
+    border: 1px solid #22C55E;
+    box-shadow: 0 0 20px #22C55E;
+}
+
+/* --- Loader --- */
+#loader {
+    transition: opacity 0.7s ease-in-out;
+}
+
+#loader.loader-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- Project Filter Buttons --- */
+.filter-btn {
+    border: 1px solid #22C55E;
+    color: #22C55E;
+    padding: 8px 24px;
+    border-radius: 9999px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+.filter-btn:hover {
+    background-color: #22C55E;
+    color: #0F172A;
+    box-shadow: 0 0 15px #22C55E;
+}
+.filter-btn.active {
+    background-color: #22C55E;
+    color: #0F172A;
+    box-shadow: 0 0 20px #22C55E;
+}
+
+/* --- Project Modal --- */
+#project-modal {
+    transition: opacity 0.3s ease-in-out;
+}
+#project-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+#modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+}
+#project-modal:not(.hidden) #modal-content {
+    transform: scale(1);
+}

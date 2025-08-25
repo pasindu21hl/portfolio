@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Pasindu Heshan</title>
+    <meta name="description" content="The portfolio of Pasindu Heshan, a cybersecurity undergraduate.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'orbitron': ['Orbitron', 'sans-serif'],
+              'poppins': ['Poppins', 'sans-serif'],
+              'jetbrains-mono': ['"JetBrains Mono"', 'monospace']
+            },
+            colors: {
+              'neon-green': '#22C55E',
+              'dark-gray': '#0F172A',
+            },
+            boxShadow: {
+              'neon-glow': '0 0 20px #22C55E',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/global.css">
+</head>
+<body class="bg-dark-gray text-white font-poppins">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-gray/90 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-orbitron font-bold text-neon-green">PH</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="about.html" class="hover:text-neon-green transition-colors">About</a>
+                <a href="projects.html" class="hover:text-neon-green transition-colors">Projects</a>
+                <a href="skills.html" class="hover:text-neon-green transition-colors">Skills</a>
+                <a href="resume.html" class="hover:text-neon-green transition-colors">Resume</a>
+                <a href="blog.html" class="hover:text-neon-green transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-neon-green transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-dark-gray z-50 p-6">
+        <div class="flex justify-end mb-8">
+            <button id="mobile-menu-close-button">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div class="flex flex-col items-center space-y-8 text-2xl">
+            <a href="about.html" class="hover:text-neon-green transition-colors">About</a>
+            <a href="projects.html" class="hover:text-neon-green transition-colors">Projects</a>
+            <a href="skills.html" class="hover:text-neon-green transition-colors">Skills</a>
+            <a href="resume.html" class="hover:text-neon-green transition-colors">Resume</a>
+            <a href="blog.html" class="hover:text-neon-green transition-colors">Blog</a>
+            <a href="contact.html" class="hover:text-neon-green transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <main class="container mx-auto px-6 pt-32 pb-16 min-h-screen">
+        <h1 class="text-4xl md:text-6xl font-orbitron font-bold text-center text-neon-green mb-8">My Projects</h1>
+
+        <!-- Filter Buttons -->
+        <div id="filter-buttons" class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Web">Web</button>
+            <button class="filter-btn" data-filter="AI">AI</button>
+            <button class="filter-btn" data-filter="Game">Game</button>
+            <button class="filter-btn" data-filter="Tools">Tools</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project cards will be rendered here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8">
+        <p class="text-gray-500">&copy; 2025 Pasindu Heshan. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cursor.js"></script>
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/scroll.js"></script>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-dark-gray/80 backdrop-blur-sm z-[60] flex justify-center items-center p-4 hidden">
+        <div id="modal-content" class="bg-dark-gray border border-neon-green/30 rounded-xl shadow-lg w-full max-w-4xl max-h-[90vh] flex flex-col relative">
+            <!-- Close Button -->
+            <button id="modal-close-btn" class="absolute -top-3 -right-3 bg-neon-green text-dark-gray rounded-full w-8 h-8 flex items-center justify-center font-bold text-2xl z-10">&times;</button>
+
+            <div class="overflow-y-auto">
+                <img id="modal-image" src="" alt="Project Image" class="w-full h-64 object-cover rounded-t-xl">
+                <div class="p-8">
+                    <h2 id="modal-title" class="text-4xl font-orbitron text-neon-green mb-4"></h2>
+                    <div id="modal-tech" class="flex flex-wrap gap-2 mb-6"></div>
+                    <p id="modal-description" class="text-gray-300 mb-6"></p>
+                    <div class="flex gap-4">
+                        <a id="modal-github" href="#" target="_blank" class="bg-neon-green text-dark-gray font-bold py-2 px-6 rounded-lg hover:shadow-neon-glow transition-shadow">View on GitHub</a>
+                        <a id="modal-live" href="#" target="_blank" class="border border-neon-green text-neon-green font-bold py-2 px-6 rounded-lg hover:bg-neon-green hover:text-dark-gray transition-colors">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
