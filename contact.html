@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - Pasindu Heshan</title>
-    <meta name="description" content="The portfolio of Pasindu Heshan, a cybersecurity undergraduate.">
+    <meta name="author" content="Pasindu Heshan">
+    <meta name="description" content="Get in touch with Pasindu Heshan. Send a message via the contact form or connect through social media.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mathiyass.github.io/portfolio/contact.html">
+    <meta property="og:title" content="Contact Me - Pasindu Heshan">
+    <meta property="og:description" content="Get in touch with Pasindu Heshan. Send a message via the contact form or connect through social media.">
+    <meta property="og:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mathiyass.github.io/portfolio/contact.html">
+    <meta property="twitter:title" content="Contact Me - Pasindu Heshan">
+    <meta property="twitter:description" content="Get in touch with Pasindu Heshan. Send a message via the contact form or connect through social media.">
+    <meta property="twitter:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +64,9 @@
                 <a href="skills.html" class="hover:text-neon-green transition-colors">Skills</a>
                 <a href="resume.html" class="hover:text-neon-green transition-colors">Resume</a>
                 <a href="blog.html" class="hover:text-neon-green transition-colors">Blog</a>
+                <a href="gallery.html" class="hover:text-neon-green transition-colors">Gallery</a>
                 <a href="contact.html" class="hover:text-neon-green transition-colors">Contact</a>
+                <a href="socials.html" class="hover:text-neon-green transition-colors">Socials</a>
             </div>
             <button class="md:hidden" id="mobile-menu-button">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -70,14 +87,60 @@
             <a href="skills.html" class="hover:text-neon-green transition-colors">Skills</a>
             <a href="resume.html" class="hover:text-neon-green transition-colors">Resume</a>
             <a href="blog.html" class="hover:text-neon-green transition-colors">Blog</a>
+            <a href="gallery.html" class="hover:text-neon-green transition-colors">Gallery</a>
             <a href="contact.html" class="hover:text-neon-green transition-colors">Contact</a>
+            <a href="socials.html" class="hover:text-neon-green transition-colors">Socials</a>
         </div>
     </div>
 
     <!-- Page Content -->
     <main class="container mx-auto px-6 pt-32 pb-16 min-h-screen">
-        <h1 class="text-4xl md:text-6xl font-orbitron font-bold text-center text-neon-green">Contact Me</h1>
-        <!-- Page content will go here -->
+        <h1 class="text-4xl md:text-6xl font-orbitron font-bold text-center text-neon-green mb-16">Get In Touch</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <!-- Left: Form -->
+            <div>
+                <form id="contact-form" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-input" placeholder=" " required>
+                        <label for="name" class="form-label">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" class="form-input" placeholder=" " required>
+                        <label for="email" class="form-label">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" class="form-input" placeholder=" " required></textarea>
+                        <label for="message" class="form-label">Message</label>
+                    </div>
+                    <button type="submit" class="w-full bg-neon-green text-dark-gray font-bold py-3 px-6 rounded-lg hover:shadow-neon-glow transition-shadow duration-300">Send Message</button>
+                </form>
+                <div id="form-status" class="mt-4 text-center"></div>
+            </div>
+
+            <!-- Right: Map & Socials -->
+            <div class="space-y-8">
+                <div>
+                    <div class="aspect-w-16 aspect-h-9 border border-neon-green/20 rounded-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.999904307333!2d79.8609593152963!3d6.90220392021579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25963120b1509%3A0x2db2c18a68712863!2sUniversity%20of%20Colombo%20School%20of%20Computing!5e0!3m2!1sen!2slk!4v1678886594915!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl font-orbitron text-neon-green mb-4">Or Find Me Here</h3>
+                    <div class="flex justify-center gap-6">
+                        <a href="https://github.com/Mathiyass" target="_blank" class="text-gray-400 hover:text-neon-green transition-colors" aria-label="GitHub">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 -0.5 25 25" xmlns="http://www.w3.org/2000/svg"><path d="m12.301 0h.093c2.242 0 4.34.613 6.137 1.68l-.055-.031c1.871 1.094 3.386 2.609 4.449 4.422l.031.058c1.04 1.769 1.654 3.896 1.654 6.166 0 5.406-3.483 10-8.327 11.658l-.087.026c-.063.02-.135.031-.209.031-.162 0-.312-.054-.433-.144l.002.001c-.128-.115-.208-.281-.208-.466 0-.005 0-.01 0-.014v.001q0-.048.008-1.226t.008-2.154c.007-.075.011-.161.011-.249 0-.792-.323-1.508-.844-2.025.618-.061 1.176-.163 1.718-.305l-.076.017c.573-.16 1.073-.373 1.537-.642l-.031.017c.508-.28.938-.636 1.292-1.058l.006-.007c.372-.476.663-1.036.84-1.645l.009-.035c.209-.683.329-1.468.329-2.281 0-.045 0-.091-.001-.136v.007c0-.022.001-.047.001-.072 0-1.248-.482-2.383-1.269-3.23l.003.003c.168-.44.265-.948.265-1.479 0-.649-.145-1.263-.404-1.814l.011.026c-.115-.022-.246-.035-.381-.035-.334 0-.649.078-.929.216l.012-.005c-.568.21-1.054.448-1.512.726l.038-.022-.609.384c-.922-.264-1.981-.416-3.075-.416s-2.153.152-3.157.436l.081-.02q-.256-.176-.681-.433c-.373-.214-.814-.421-1.272-.595l-.066-.022c-.293-.154-.64-.244-1.009-.244-.124 0-.246.01-.364.03l.013-.002c-.248.524-.393 1.139-.393 1.788 0 .531.097 1.04.275 1.509l-.01-.029c-.785.844-1.266 1.979-1.266 3.227 0 .025 0 .051.001.076v-.004c-.001.039-.001.084-.001.13 0 .809.12 1.591.344 2.327l-.015-.057c.189.643.476 1.202.85 1.693l-.009-.013c.354.435.782.793 1.267 1.062l.022.011c.432.252.933.465 1.46.614l.046.011c.466.125 1.024.227 1.595.284l.046.004c-.431.428-.718 1-.784 1.638l-.001.012c-.207.101-.448.183-.699.236l-.021.004c-.256.051-.549.08-.85.08-.022 0-.044 0-.066 0h.003c-.394-.008-.756-.136-1.055-.348l.006.004c-.371-.259-.671-.595-.881-.986l-.007-.015c-.198-.336-.459-.614-.768-.827l-.009-.006c-.225-.169-.49-.301-.776-.38l-.016-.004-.32-.048c-.023-.002-.05-.003-.077-.003-.14 0-.273.028-.394.077l.007-.003q-.128.072-.08.184c.039.086.087.16.145.225l-.001-.001c.061.072.13.135.205.19l.003.002.112.08c.283.148.516.354.693.603l.004.006c.191.237.359.505.494.792l.01.024.16.368c.135.402.38.738.7.981l.005.004c.3.234.662.402 1.057.478l.016.002c.33.064.714.104 1.106.112h.007c.045.002.097.002.15.002.261 0 .517-.021.767-.062l-.027.004.368-.064q0 .609.008 1.418t.008.873v.014c0 .185-.08.351-.208.466h-.001c-.119.089-.268.143-.431.143-.075 0-.147-.011-.214-.032l.005.001c-4.929-1.689-8.409-6.283-8.409-11.69 0-2.268.612-4.393 1.681-6.219l-.032.058c1.094-1.871 2.609-3.386 4.422-4.449l.058-.031c1.739-1.034 3.835-1.645 6.073-1.645h.098-.005zm-7.64 17.666q.048-.112-.112-.192-.16-.048-.208.032-.048.112.112.192.144.096.208-.032zm.497.545q.112-.08-.032-.256-.16-.144-.256-.048-.112.08.032.256.159.157.256.047zm.48.72q.144-.112 0-.304-.128-.208-.272-.096-.144.08 0 .288t.272.112zm.672.673q.128-.128-.064-.304-.192-.192-.32-.048-.144.128.064.304.192.192.32.044zm.913.4q.048-.176-.208-.256-.24-.064-.304.112t.208.24q.24.097.304-.096zm1.009.08q0-.208-.272-.176-.256 0-.256.176 0 .208.272.176.256.001.256-.175zm.929-.16q-.032-.176-.288-.144-.256.048-.224.24t.288.128.225-.224z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mathisha-angirasa-a955941a2/" target="_blank" class="text-gray-400 hover:text-neon-green transition-colors" aria-label="LinkedIn">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 382 382" xmlns="http://www.w3.org/2000/svg"><path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"/></svg>
+                        </a>
+                        <a href="mailto:heshanphl.1234@gmail.com" class="text-gray-400 hover:text-neon-green transition-colors" aria-label="Email">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"><path d="m 132.50586,39.773437 c -80.786884,0 -147.111329,66.380993 -147.111329,147.175783 v 231.32422 c 0,80.79479 66.324445,147.17578 147.111329,147.17578 h 336.20508 c 80.78688,0 147.11328,-66.38099 147.11328,-147.17578 V 186.94922 c 0,-80.79479 -66.3264,-147.175783 -147.11328,-147.175783 z m 0,84.082033 h 336.20508 c 35.63231,0 63.02929,27.39904 63.02929,63.09375 v 231.32422 c 0,35.69471 -27.39698,63.09375 -63.02929,63.09375 H 132.50586 c -35.63231,0 -63.029298,-27.39904 -63.029298,-63.09375 V 186.94922 c 0,-35.69471 27.396988,-63.09375 63.029298,-63.09375 z"/><path d="M 67.464844,81.886719 A 42.041302,42.041302 0 0 0 38.351562,95.591797 42.041302,42.041302 0 0 0 41.162109,154.98047 L 272.31836,365.25195 a 42.045506,42.045506 0 0 0 56.58008,0 L 560.05469,154.98047 a 42.041302,42.041302 0 0 0 2.81054,-59.388673 42.041302,42.041302 0 0 0 -59.38867,-2.808594 L 300.60937,277.31836 97.740234,92.783203 A 42.041302,42.041302 0 0 0 67.464844,81.886719 Z"/><path d="m 418.54102,322.93555 -45.69727,43.45898 130.79492,137.53125 45.69727,-43.45898 z"/><path d="M 183.54297,323.11719 52.748047,462.84961 98.787109,505.94531 229.58203,366.21289 Z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -86,10 +149,33 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/contact.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/cursor.js"></script>
     <script src="assets/js/loader.js"></script>
     <script src="assets/js/scroll.js"></script>
+    <script src="assets/js/terminal.js"></script>
+
+    <!-- Terminal Easter Egg -->
+    <div id="terminal" class="hidden fixed inset-5 bg-black/80 backdrop-blur-md z-[200] rounded-lg border border-neon-green/30 shadow-2xl font-jetbrains-mono text-sm">
+        <div class="bg-gray-800/50 p-2 flex items-center rounded-t-lg">
+            <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <p class="flex-1 text-center text-gray-400">/home/pasindu/bash</p>
+        </div>
+        <div id="terminal-body" class="p-4 h-[calc(100%-32px)] overflow-y-auto" onclick="document.getElementById('terminal-input').focus();">
+            <div id="terminal-output"></div>
+            <div class="flex items-center">
+                <span class="text-neon-green mr-2">$</span>
+                <input type="text" id="terminal-input" class="bg-transparent border-none text-white focus:outline-none w-full" autofocus>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

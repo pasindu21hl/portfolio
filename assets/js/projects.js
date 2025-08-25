@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         card.innerHTML = `
             <div class="relative">
-                <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover">
+                <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover" loading="lazy">
                 <div class="absolute inset-0 bg-dark-gray/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p class="text-neon-green font-bold text-lg">View Details</p>
                 </div>

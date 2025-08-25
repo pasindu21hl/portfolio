@@ -3,23 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Pasindu Heshan</title>
-    <meta name="author" content="Pasindu Heshan">
-    <meta name="description" content="The Comlog: A collection of articles and write-ups by Pasindu Heshan on cybersecurity topics, including web security, malware analysis, and CTF challenges.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mathiyass.github.io/portfolio/blog.html">
-    <meta property="og:title" content="Blog - Pasindu Heshan">
-    <meta property="og:description" content="The Comlog: A collection of articles and write-ups by Pasindu Heshan on cybersecurity topics.">
-    <meta property="og:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mathiyass.github.io/portfolio/blog.html">
-    <meta property="twitter:title" content="Blog - Pasindu Heshan">
-    <meta property="twitter:description" content="The Comlog: A collection of articles and write-ups by Pasindu Heshan on cybersecurity topics.">
-    <meta property="twitter:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
+    <title>My Favorite CTF Challenge Walkthrough - Pasindu Heshan</title>
+    <meta name="description" content="The portfolio of Pasindu Heshan, a cybersecurity undergraduate.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +30,10 @@
               'neon-glow': '0 0 20px #22C55E',
             }
           }
-        }
+        },
+        plugins: [
+            require('@tailwindcss/typography'),
+        ],
       }
     </script>
 
@@ -94,19 +82,23 @@
     </div>
 
     <!-- Page Content -->
-    <main class="container mx-auto px-6 pt-32 pb-16 min-h-screen">
-        <h1 class="text-4xl md:text-6xl font-orbitron font-bold text-center text-neon-green mb-8">The Comlog</h1>
+    <main class="container mx-auto px-6 pt-32 pb-16">
+        <article class="max-w-4xl mx-auto">
+            <!-- Post Header -->
+            <header class="mb-8 text-center">
+                <a href="blog.html" class="text-neon-green font-jetbrains-mono hover:underline">CTF</a>
+                <h1 class="text-4xl md:text-6xl font-orbitron font-bold my-4">My Favorite CTF Challenge Walkthrough</h1>
+                <p class="text-gray-400">Posted on June 30, 2025 by Pasindu Heshan</p>
+            </header>
 
-        <!-- Filter Buttons -->
-        <div id="blog-filter-buttons" class="flex flex-wrap justify-center gap-4 mb-12">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <!-- Categories will be populated here by JS -->
-        </div>
+            <img src="assets/img/blog-3.jpg" alt="CTF" class="w-full rounded-xl mb-8 border-2 border-neon-green/20" loading="lazy">
 
-        <!-- Blog Grid -->
-        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Blog post cards will be rendered here by JavaScript -->
-        </div>
+            <!-- Post Content -->
+            <div class="prose prose-invert max-w-none prose-p:text-gray-300 prose-headings:text-neon-green prose-headings:font-orbitron prose-a:text-neon-green prose-strong:text-white prose-pre:bg-white/5 prose-pre:border prose-pre:border-neon-green/20">
+                <p>This is the content for the third blog post. It would be a CTF walkthrough.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </article>
     </main>
 
     <!-- Footer -->

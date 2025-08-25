@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Pasindu Heshan</title>
-    <meta name="description" content="The portfolio of Pasindu Heshan, a cybersecurity undergraduate.">
+    <meta name="author" content="Pasindu Heshan">
+    <meta name="description" content="A gallery of images related to Pasindu Heshan's work, projects, and interests in the cybersecurity field.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mathiyass.github.io/portfolio/gallery.html">
+    <meta property="og:title" content="Gallery - Pasindu Heshan">
+    <meta property="og:description" content="A gallery of images related to Pasindu Heshan's work, projects, and interests.">
+    <meta property="og:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mathiyass.github.io/portfolio/gallery.html">
+    <meta property="twitter:title" content="Gallery - Pasindu Heshan">
+    <meta property="twitter:description" content="A gallery of images related to Pasindu Heshan's work, projects, and interests.">
+    <meta property="twitter:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +64,9 @@
                 <a href="skills.html" class="hover:text-neon-green transition-colors">Skills</a>
                 <a href="resume.html" class="hover:text-neon-green transition-colors">Resume</a>
                 <a href="blog.html" class="hover:text-neon-green transition-colors">Blog</a>
+                <a href="gallery.html" class="hover:text-neon-green transition-colors">Gallery</a>
                 <a href="contact.html" class="hover:text-neon-green transition-colors">Contact</a>
+                <a href="socials.html" class="hover:text-neon-green transition-colors">Socials</a>
             </div>
             <button class="md:hidden" id="mobile-menu-button">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -70,14 +87,19 @@
             <a href="skills.html" class="hover:text-neon-green transition-colors">Skills</a>
             <a href="resume.html" class="hover:text-neon-green transition-colors">Resume</a>
             <a href="blog.html" class="hover:text-neon-green transition-colors">Blog</a>
+            <a href="gallery.html" class="hover:text-neon-green transition-colors">Gallery</a>
             <a href="contact.html" class="hover:text-neon-green transition-colors">Contact</a>
+            <a href="socials.html" class="hover:text-neon-green transition-colors">Socials</a>
         </div>
     </div>
 
     <!-- Page Content -->
     <main class="container mx-auto px-6 pt-32 pb-16 min-h-screen">
-        <h1 class="text-4xl md:text-6xl font-orbitron font-bold text-center text-neon-green">Gallery</h1>
-        <!-- Page content will go here -->
+        <h1 class="text-4xl md:text-6xl font-orbitron font-bold text-center text-neon-green mb-16">Gallery</h1>
+
+        <div id="gallery-grid" class="masonry-grid">
+            <!-- Grid items will be inserted here by JS -->
+        </div>
     </main>
 
     <!-- Footer -->
@@ -86,10 +108,42 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- Lightgallery CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" />
+
+    <!-- Masonry.js -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- Lightgallery.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+
+    <!-- Page-specific & main scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="assets/js/parallax.js"></script>
+    <script src="assets/js/gallery.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/cursor.js"></script>
     <script src="assets/js/loader.js"></script>
     <script src="assets/js/scroll.js"></script>
+    <script src="assets/js/terminal.js"></script>
+
+    <!-- Terminal Easter Egg -->
+    <div id="terminal" class="hidden fixed inset-5 bg-black/80 backdrop-blur-md z-[200] rounded-lg border border-neon-green/30 shadow-2xl font-jetbrains-mono text-sm">
+        <div class="bg-gray-800/50 p-2 flex items-center rounded-t-lg">
+            <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <p class="flex-1 text-center text-gray-400">/home/pasindu/bash</p>
+        </div>
+        <div id="terminal-body" class="p-4 h-[calc(100%-32px)] overflow-y-auto" onclick="document.getElementById('terminal-input').focus();">
+            <div id="terminal-output"></div>
+            <div class="flex items-center">
+                <span class="text-neon-green mr-2">$</span>
+                <input type="text" id="terminal-input" class="bg-transparent border-none text-white focus:outline-none w-full" autofocus>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

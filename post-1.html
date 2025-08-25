@@ -3,23 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Pasindu Heshan</title>
-    <meta name="author" content="Pasindu Heshan">
-    <meta name="description" content="The Comlog: A collection of articles and write-ups by Pasindu Heshan on cybersecurity topics, including web security, malware analysis, and CTF challenges.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mathiyass.github.io/portfolio/blog.html">
-    <meta property="og:title" content="Blog - Pasindu Heshan">
-    <meta property="og:description" content="The Comlog: A collection of articles and write-ups by Pasindu Heshan on cybersecurity topics.">
-    <meta property="og:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mathiyass.github.io/portfolio/blog.html">
-    <meta property="twitter:title" content="Blog - Pasindu Heshan">
-    <meta property="twitter:description" content="The Comlog: A collection of articles and write-ups by Pasindu Heshan on cybersecurity topics.">
-    <meta property="twitter:image" content="https://mathiyass.github.io/portfolio/assets/img/og-image.jpg">
+    <title>Deconstructing the Latest Phishing Kits - Pasindu Heshan</title>
+    <meta name="description" content="The portfolio of Pasindu Heshan, a cybersecurity undergraduate.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +30,10 @@
               'neon-glow': '0 0 20px #22C55E',
             }
           }
-        }
+        },
+        plugins: [
+            require('@tailwindcss/typography'),
+        ],
       }
     </script>
 
@@ -94,19 +82,35 @@
     </div>
 
     <!-- Page Content -->
-    <main class="container mx-auto px-6 pt-32 pb-16 min-h-screen">
-        <h1 class="text-4xl md:text-6xl font-orbitron font-bold text-center text-neon-green mb-8">The Comlog</h1>
+    <main class="container mx-auto px-6 pt-32 pb-16">
+        <article class="max-w-4xl mx-auto">
+            <!-- Post Header -->
+            <header class="mb-8 text-center">
+                <a href="blog.html" class="text-neon-green font-jetbrains-mono hover:underline">Web Security</a>
+                <h1 class="text-4xl md:text-6xl font-orbitron font-bold my-4">Deconstructing the Latest Phishing Kits</h1>
+                <p class="text-gray-400">Posted on August 15, 2025 by Pasindu Heshan</p>
+            </header>
 
-        <!-- Filter Buttons -->
-        <div id="blog-filter-buttons" class="flex flex-wrap justify-center gap-4 mb-12">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <!-- Categories will be populated here by JS -->
-        </div>
+            <img src="assets/img/blog-1.jpg" alt="Phishing Kits" class="w-full rounded-xl mb-8 border-2 border-neon-green/20" loading="lazy">
 
-        <!-- Blog Grid -->
-        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Blog post cards will be rendered here by JavaScript -->
-        </div>
+            <!-- Post Content -->
+            <div class="prose prose-invert max-w-none prose-p:text-gray-300 prose-headings:text-neon-green prose-headings:font-orbitron prose-a:text-neon-green prose-strong:text-white prose-pre:bg-white/5 prose-pre:border prose-pre:border-neon-green/20">
+                <p>This is where the main content of the blog post would go. We'll explore the inner workings of modern phishing kits, looking at their architecture, obfuscation techniques, and data exfiltration methods. This post will serve as a practical guide for blue teamers and security enthusiasts.</p>
+                <p>Phishing remains one of the most effective attack vectors for cybercriminals. Understanding how phishing kits are constructed is crucial for developing effective countermeasures. We will analyze a real-world sample to understand its components.</p>
+                <h2>Core Components</h2>
+                <p>Most kits consist of a few key files: the HTML template, the PHP script for harvesting credentials, and often a set of scripts for anti-bot detection and redirection.</p>
+                <pre><code>&lt;?php
+// A simplified credential harvesting script
+$username = $_POST['username'];
+$password = $_POST['password'];
+$data = "U: $username | P: $password\n";
+file_put_contents('credentials.txt', $data, FILE_APPEND);
+header('Location: https://original-website.com');
+exit();
+?&gt;</code></pre>
+                <p>The code above is a minimalistic example of how credentials are captured and saved to a file on the attacker's server before redirecting the victim.</p>
+            </div>
+        </article>
     </main>
 
     <!-- Footer -->
