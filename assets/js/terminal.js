@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 Type 'projects --all' to see more (demo).`,
         contact: `Establishing secure connection...
 - Email: heshanphl.1234@gmail.com
-- GitHub: @Mathiyass
-- LinkedIn: /in/mathisha-angirasa-a955941a2/`,
+- GitHub: @pasindu21hl
+- LinkedIn: /in/pasindu-heshan-6735b22b4/`,
         clear: '',
         exit: ''
     };
