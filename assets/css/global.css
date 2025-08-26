@@ -93,8 +93,9 @@ body {
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.3s ease-in-out;
     box-shadow: 0 0 15px #22C55E, 0 0 25px #22C55E;
+    opacity: 0; /* Start hidden */
 }
 
 .custom-cursor.pointer {
