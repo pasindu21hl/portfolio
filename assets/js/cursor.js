@@ -4,64 +4,71 @@ document.addEventListener('DOMContentLoaded', () => {
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
     if (prefersReducedMotion || isTouchDevice) {
-        // Don't run the custom cursor script
-        // and ensure the default cursor is visible.
         document.body.style.cursor = 'auto';
         return;
     }
 
-    const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
-    document.body.appendChild(cursor);
+    const mainCursor = document.createElement('div');
+    mainCursor.classList.add('custom-cursor');
+    document.body.appendChild(mainCursor);
+
+    const particlePool = [];
+    const particleCount = 25;
+    let particleIndex = 0;
+
+    // Pre-create the particle elements
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        document.body.appendChild(particle);
+        particlePool.push(particle);
+    }
 
     let mouseX = 0;
     let mouseY = 0;
+    let lastParticleTime = 0;
+    const particleCreationDelay = 40; // ms, how often to create a particle
     let isInitialized = false;
-
-    // Use a single, reliable animation loop for positioning
-    const updateCursor = () => {
-        if (isInitialized) {
-            cursor.style.left = `${mouseX}px`;
-            cursor.style.top = `${mouseY}px`;
-        }
-        requestAnimationFrame(updateCursor);
-    };
 
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
 
-        // On the first mouse move, make the cursor visible and start the animation loop
         if (!isInitialized) {
-            cursor.style.opacity = '1';
+            mainCursor.style.opacity = '1';
             isInitialized = true;
         }
-    });
 
-    // Handle hover effects on interactive elements
-    const interactiveElements = document.querySelectorAll(
-        'a, button, input, textarea, [data-cursor-pointer]'
-    );
+        // Position the main cursor directly
+        mainCursor.style.left = `${mouseX}px`;
+        mainCursor.style.top = `${mouseY}px`;
 
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('pointer'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('pointer'));
-    });
+        const now = Date.now();
+        if (now - lastParticleTime > particleCreationDelay) {
+            lastParticleTime = now;
 
-    // Hide the cursor when the mouse leaves the window
-    document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-        // Only show if it has been initialized
-        if (isInitialized) {
-            cursor.style.opacity = '1';
+            const particle = particlePool[particleIndex];
+            particleIndex = (particleIndex + 1) % particleCount;
+
+            particle.className = ''; // Remove previous animation class
+            void particle.offsetWidth; // Trigger reflow
+            particle.className = 'trail-particle';
+
+            particle.style.left = `${mouseX}px`;
+            particle.style.top = `${mouseY}px`;
+            const size = Math.random() * 6 + 4; // size between 4px and 10px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
         }
     });
 
-    // Hide the default system cursor
-    document.body.style.cursor = 'none';
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, [data-cursor-pointer]');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => mainCursor.classList.add('pointer'));
+        el.addEventListener('mouseleave', () => mainCursor.classList.remove('pointer'));
+    });
 
-    // Start the animation loop immediately
-    requestAnimationFrame(updateCursor);
+    document.addEventListener('mouseleave', () => { mainCursor.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { if (isInitialized) mainCursor.style.opacity = '1'; });
+
+    document.body.style.cursor = 'none';
 });
