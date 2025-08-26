@@ -1,0 +1,20 @@
+{
+  "name": "cybersecurity-portfolio",
+  "version": "1.0.0",
+  "description": "Cybersecurity portfolio website for Pasindu Heshan",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static site - no build required'",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "cybersecurity",
+    "web-development"
+  ],
+  "author": "Pasindu Heshan",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
