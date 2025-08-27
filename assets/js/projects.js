@@ -1,22 +1,22 @@
 const projects = [
     {
         id: 1,
-        title: "Video Downloader",
-        category: "Tools",
-        image: "assets/img/project-tool-1.jpg",
+        title: "Project Alpha",
+        category: "Web",
+        image: "assets/img/project-web-1.jpg",
         description: "A full-stack web application for real-time data visualization. Built with a focus on security and performance, featuring a secure API and a robust front-end.",
-        technologies: ["Python", "HTML"],
-        githubLink: "https://github.com/pasindu21hl/yt-downloader-pro",
-        liveLink: "https://yt-downloader-pro-ochre.vercel.app/"
+        technologies: ["JavaScript", "Node.js", "Express", "MongoDB"],
+        githubLink: "#",
+        liveLink: "#"
     },
     {
         id: 2,
-        title: "ASCII Art Generator",
-        category: "Tools",
-        image: "assets/img/project-tool-2.jpg",
-        description: "The ASCII Art Generator is a Python application that converts images into ASCII art. It comes with a Tkinter-based GUI, allowing you to load images, tweak settings, and export ASCII art as text or HTML. It supports both monochrome and colored ASCII output with customizable character sets.",
-        technologies: ["Python"],
-        githubLink: "https://github.com/pasindu21hl/ASCII-Art-Generator/tree/main",
+        title: "AI Sentinel",
+        category: "AI",
+        image: "assets/img/project-ai-1.jpg",
+        description: "An AI-powered intrusion detection system that uses machine learning to identify and neutralize threats in real-time. The model is trained on the KDD Cup '99 dataset.",
+        technologies: ["Python", "TensorFlow", "Scikit-learn"],
+        githubLink: "#",
         liveLink: "#"
     },
     {
@@ -33,7 +33,7 @@ const projects = [
         id: 4,
         title: "NetMapper",
         category: "Tools",
-        image: "assets/img/project-tool-3.jpg",
+        image: "assets/img/project-tool-1.jpg",
         description: "A command-line tool for network reconnaissance and vulnerability scanning, written in Python. Supports multiple scan types and outputs to JSON.",
         technologies: ["Python", "Scapy", "Nmap"],
         githubLink: "#",
