@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriterEl = document.getElementById('typewriter');
     if (typewriterEl) {
         const typewriter = new Typewriter(typewriterEl, {
-            strings: ['Web Security', 'Malware Analysis', 'CTFs'],
+            strings: ['Web Security', 'Malware Analysis', 'SOC Analysis', 'Penetration Testing', 'CTFs'],
             autoStart: true,
             loop: true,
             delay: 75,
