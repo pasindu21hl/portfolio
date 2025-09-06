@@ -120,12 +120,14 @@
                 <div id="form-status" class="mt-4 text-center"></div>
             </div>
 
-            <!-- Right: Map & Socials -->
-            <div class="space-y-8">
-                <div>
-                    <div class="aspect-w-16 aspect-h-9 border border-neon-green/20 rounded-lg overflow-hidden">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.999904307333!2d79.8609593152963!3d6.90220392021579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25963120b1509%3A0x2db2c18a68712863!2sUniversity%20of%20Colombo%20School%20of%20Computing!5e0!3m2!1sen!2slk!4v1678886594915!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
-                    </div>
+            <!-- Right: Chatbot & Socials -->
+            <div class="space-y-8" data-scroll-reveal="slide-in-up" data-reveal-delay="200">
+                <div class="text-center p-8 border border-neon-green/20 rounded-lg bg-white/5">
+                    <h3 class="text-2xl font-orbitron text-neon-green mb-4">System Assistant</h3>
+                    <p class="text-gray-300 mb-6">Need help? Or just want to test the system? Engage with my AI assistant.</p>
+                    <button id="launch-chatbot" class="w-full bg-neon-green text-dark-gray font-bold py-3 px-6 rounded-lg hover:shadow-neon-glow transition-shadow duration-300">
+                        Launch Assistant
+                    </button>
                 </div>
                 <div class="text-center">
                     <h3 class="text-2xl font-orbitron text-neon-green mb-4">Or Find Me Here</h3>
@@ -154,6 +156,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles-preset-links/2.12.0/tsparticles.preset.links.bundle.min.js"></script>
     <script src="assets/js/particle-network.js"></script>
     <script src="assets/js/contact.js"></script>
+    <script src="assets/js/chatbot.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/cursor.js"></script>
@@ -176,6 +179,22 @@
             <div class="flex items-center">
                 <span class="text-neon-green mr-2">$</span>
                 <input type="text" id="terminal-input" class="bg-transparent border-none text-white focus:outline-none w-full" autofocus>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Modal -->
+    <div id="chatbot-container" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-[200] flex justify-center items-center p-4">
+        <div class="w-full max-w-lg bg-dark-gray border border-neon-green/30 rounded-lg shadow-2xl flex flex-col relative">
+            <div class="bg-gray-800/50 p-2 flex items-center justify-between rounded-t-lg">
+                <p class="text-neon-green font-jetbrains-mono ml-2">SYSTEM_ASSISTANT</p>
+                <button id="chatbot-close-btn" class="text-gray-400 hover:text-white font-bold text-2xl px-2">&times;</button>
+            </div>
+            <div id="chatbot-messages" class="p-4 h-80 overflow-y-auto space-y-4">
+                <!-- Messages will be injected here -->
+            </div>
+            <div id="chatbot-options" class="p-4 border-t border-neon-green/20 flex flex-wrap gap-2">
+                <!-- User response buttons will be injected here -->
             </div>
         </div>
     </div>

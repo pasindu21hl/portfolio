@@ -293,11 +293,6 @@ textarea.form-input {
     min-height: 100px;
 }
 
-/* --- Dark Mode Map --- */
-.map-iframe {
-    filter: invert(1) hue-rotate(180deg) contrast(0.9) saturate(0.8);
-}
-
 /* --- Parallax Stars --- */
 @keyframes twinkle {
     0%, 100% {
@@ -359,4 +354,37 @@ textarea.form-input {
     background-color: rgba(34, 197, 94, 0.5);
     border-radius: 4px;
     border: 1px solid rgba(34, 197, 94, 0.8);
+}
+
+/* --- Chatbot --- */
+.chatbot-message {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    max-width: 80%;
+    line-height: 1.5;
+}
+.bot-message {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    color: #E2E8F0;
+    align-self: flex-start;
+}
+.user-message {
+    background-color: rgba(71, 85, 105, 0.3);
+    color: #fff;
+    align-self: flex-end;
+    text-align: right;
+}
+.chatbot-option-btn {
+    @apply bg-transparent border border-neon-green/50 text-neon-green/80 text-sm px-3 py-2 rounded-full hover:bg-neon-green/20 hover:text-neon-green transition-colors cursor-pointer;
+}
+#chatbot-messages::-webkit-scrollbar {
+    width: 8px;
+}
+#chatbot-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+#chatbot-messages::-webkit-scrollbar-thumb {
+    background-color: rgba(34, 197, 94, 0.5);
+    border-radius: 4px;
 }
